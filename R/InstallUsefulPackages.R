@@ -1,5 +1,6 @@
 #### Dejan Draschkow (www.draschkow.com) #####
 
+# check if required package are available and if not install them and load them
 InstallUsefulPackages <- function(){
 
    if (!require("devtools")) {
