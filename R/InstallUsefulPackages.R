@@ -98,6 +98,11 @@ InstallUsefulPackages <- function(){
     library(xlsx)
   }
 
+  if (!require("xtable")) {
+    install.packages("xlsx", dependencies = TRUE)
+    library(xlsx)
+  }
+
   if (!require("remef")) {
     devtools::install_github("hohenstein/remef") #github
     library(remef)
