@@ -97,9 +97,18 @@ InstallUsefulPackages <- function(){
     install.packages("xlsx", dependencies = TRUE)
     library(xlsx)
   }
+
   if (!require("rgl")) {
     install.packages("rgl", dependencies = TRUE)
     library(rgl)
+  }
+  if (!require("plot3D ")) {
+    install.packages("plot3D ", dependencies = TRUE)
+    library(plot3D)
+  }
+  if (!require("scatterplot3d")) {
+    install.packages("scatterplot3d", dependencies = TRUE)
+    library(scatterplot3d)
   }
 
   if (!require("remef")) {
