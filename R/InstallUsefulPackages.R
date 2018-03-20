@@ -97,6 +97,10 @@ InstallUsefulPackages <- function(){
     install.packages("xlsx", dependencies = TRUE)
     library(xlsx)
   }
+  if (!require("rgl")) {
+    install.packages("rgl", dependencies = TRUE)
+    library(rgl)
+  }
 
   if (!require("remef")) {
     devtools::install_github("hohenstein/remef") #github
