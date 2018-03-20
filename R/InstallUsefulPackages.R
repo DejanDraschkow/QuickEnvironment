@@ -107,6 +107,11 @@ InstallUsefulPackages <- function(){
     devtools::install_github("dmbates/RePsychLing") #github
     library(RePsychLing)
   }
+
+  if (!require("GLMMmisc")) {
+    devtools::install_github("pcdjohnson/GLMMmisc") #github
+    library(GLMMmisc)
+  }
 }
 
 
