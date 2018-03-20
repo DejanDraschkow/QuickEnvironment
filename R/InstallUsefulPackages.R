@@ -44,19 +44,14 @@ InstallUsefulPackages <- function(){
     library(reshape2)
   }
 
-  if (!require("plyr")) {
-    install.packages("plyr", dependencies = TRUE)
-    library(dplyr)
-  }
-
   if (!require("dplyr")) {
     install.packages("dplyr", dependencies = TRUE)
     library(dplyr)
   }
 
-  if (!require("dtplyr")) {
-    install.packages("dtplyr", dependencies = TRUE)
-    library(dtplyr)
+  if (!require("plyr")) {
+    install.packages("plyr", dependencies = TRUE)
+    library(dplyr)
   }
 
   if (!require("ez")) {
