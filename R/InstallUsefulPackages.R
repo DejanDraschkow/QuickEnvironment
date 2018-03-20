@@ -98,6 +98,11 @@ InstallUsefulPackages <- function(){
     library(xlsx)
   }
 
+  if (!require("MASS")) {
+    install.packages("MASS", dependencies = TRUE)
+    library(MASS)
+  }
+
   if (!require("rgl")) {
     install.packages("rgl", dependencies = TRUE)
     library(rgl)
