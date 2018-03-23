@@ -14,11 +14,6 @@ InstallUsefulPackages <- function(){
     library(EBImage)
   }
 
-  if (!require("installr")) {
-    install.packages("installr", dependencies = TRUE)
-    library(installr)
-  }
-
   if (!require("png")) {
     install.packages("png", dependencies = TRUE)
     library(png)
@@ -129,6 +124,11 @@ InstallUsefulPackages <- function(){
   if (!require("GLMMmisc")) {
     devtools::install_github("pcdjohnson/GLMMmisc") #github
     library(GLMMmisc)
+  }
+
+  if (suppressWarnings(!require("installr"))) {
+    suppressWarnings(install.packages("installr", dependencies = TRUE))
+    try(library(installr),silent=T) # MAC incompatible
   }
 }
 
