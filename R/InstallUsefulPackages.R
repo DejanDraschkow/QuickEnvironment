@@ -3,7 +3,7 @@
 # check if required package are available and if not install them and load them
 InstallUsefulPackages <- function(){
 
-   if (!require("devtools")) {
+  if (!require("devtools")) {
     install.packages("devtools", dependencies = TRUE)
     library(devtools)
   }
@@ -103,10 +103,6 @@ InstallUsefulPackages <- function(){
     library(GLMMmisc)
   }
 
-  if (!require("plot3D ")) {
-    install.packages("plot3D ", dependencies = TRUE)
-    library(plot3D)
-  }
   if (!require("scatterplot3d")) {
     install.packages("scatterplot3d", dependencies = TRUE)
     library(scatterplot3d)
@@ -122,6 +118,13 @@ InstallUsefulPackages <- function(){
       try(library(installr),silent=T) # MAC incompatible
     }
   }
+  if (as.numeric(R.Version()$minor)>=4.3) {
+    if (!require("plot3D ")) {
+      install.packages("plot3D ", dependencies = TRUE)
+      library(plot3D)
+    }
+  }
+  print("If you see this message all libraries were loaded succesfully")
 }
-print("If you see this message all libraries were loaded succesfully")
+
 
