@@ -44,11 +44,6 @@ InstallUsefulPackages <- function(){
     library(dplyr)
   }
 
-  if (!require("plyr")) {
-    install.packages("plyr", dependencies = TRUE)
-    library(dplyr)
-  }
-
   if (!require("ez")) {
     install.packages("ez", dependencies = TRUE)
     library(ez)
