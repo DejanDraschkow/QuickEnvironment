@@ -83,14 +83,9 @@ InstallUsefulPackages <- function(){
     install.packages("gtools", dependencies = TRUE)
     library(gtools)
   }
-  if (!require("xlsx")) {
-    install.packages("xlsx", dependencies = TRUE)
-    library(xlsx)
-  }
-
-  if (!require("xtable")) {
-    install.packages("xlsx", dependencies = TRUE)
-    library(xlsx)
+  if (!require("gdata")) {
+    install.packages("gdata", dependencies = TRUE)
+    library(gdata) # reading excel files
   }
 
   if (!require("MASS")) {
