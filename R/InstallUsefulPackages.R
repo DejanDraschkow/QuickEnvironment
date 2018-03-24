@@ -88,19 +88,6 @@ InstallUsefulPackages <- function(){
     library(MASS)
   }
 
-  if (!require("rgl")) {
-    install.packages("rgl", dependencies = TRUE)
-    library(rgl)
-  }
-  if (!require("plot3D ")) {
-    install.packages("plot3D ", dependencies = TRUE)
-    library(plot3D)
-  }
-  if (!require("scatterplot3d")) {
-    install.packages("scatterplot3d", dependencies = TRUE)
-    library(scatterplot3d)
-  }
-
   if (!require("remef")) {
     devtools::install_github("hohenstein/remef") #github
     library(remef)
@@ -116,10 +103,25 @@ InstallUsefulPackages <- function(){
     library(GLMMmisc)
   }
 
-  if (suppressWarnings(!require("installr"))) {
-    suppressWarnings(install.packages("installr", dependencies = TRUE))
-    try(library(installr),silent=T) # MAC incompatible
+  if (!require("plot3D ")) {
+    install.packages("plot3D ", dependencies = TRUE)
+    library(plot3D)
+  }
+  if (!require("scatterplot3d")) {
+    install.packages("scatterplot3d", dependencies = TRUE)
+    library(scatterplot3d)
+  }
+  if (Sys.info()['sysname'] == "Windows"){
+    if (!require("rgl")) {
+      install.packages("rgl", dependencies = TRUE)
+      library(rgl)
+    }
+
+    if (suppressWarnings(!require("installr"))) {
+      suppressWarnings(install.packages("installr", dependencies = TRUE))
+      try(library(installr),silent=T) # MAC incompatible
+    }
   }
 }
-
+print("If you see this message all libraries were loaded succesfully")
 
