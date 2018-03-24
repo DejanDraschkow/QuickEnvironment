@@ -118,7 +118,7 @@ InstallUsefulPackages <- function(){
       try(library(installr),silent=T) # MAC incompatible
     }
   }
-  if (as.numeric(R.Version()$minor)>=4.3) {
+  if (as.numeric(R.Version()$minor)>=4.4) {
     if (!require("plot3D ")) {
       install.packages("plot3D ", dependencies = TRUE)
       library(plot3D)
