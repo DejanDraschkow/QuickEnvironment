@@ -107,6 +107,26 @@ InstallUsefulPackages <- function(){
     install.packages("scatterplot3d", dependencies = TRUE)
     library(scatterplot3d)
   }
+
+  if (!require("graphics")) {
+    install.packages("graphics", dependencies = TRUE)
+    library(graphics)
+  }
+
+  if (!require("fpc")) {
+    install.packages("fpc", dependencies = TRUE)
+    library(fpc)
+  }
+
+  if (!require("mclust")) {
+    install.packages("mclust", dependencies = TRUE)
+    library(mclust)
+  }
+  if (!require("corrplot")) {
+    install.packages("corrplot", dependencies = TRUE)
+    library(corrplot)
+  }
+
   if (Sys.info()['sysname'] == "Windows"){
     if (!require("rgl")) {
       install.packages("rgl", dependencies = TRUE)
