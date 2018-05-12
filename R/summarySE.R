@@ -6,7 +6,7 @@
 ##   conf.interval: the percent range of the confidence interval (default is 95%)
 summarySE <- function(data=NULL, measurevar, groupvars=NULL, na.rm=FALSE,
                       conf.interval=.95, .drop=TRUE) {
-  library(plyr)
+  detach("package:dplyr", unload=TRUE)
   
   # New version of length which can handle NA's: if na.rm==T, don't count them
   length2 <- function (x, na.rm=FALSE) {
@@ -38,4 +38,5 @@ summarySE <- function(data=NULL, measurevar, groupvars=NULL, na.rm=FALSE,
   datac$ci <- datac$se * ciMult
   
   return(datac)
+  library(dplyr)
 }
