@@ -59,6 +59,4 @@ summarySEwithin <- function(data=NULL, measurevar, betweenvars=NULL, withinvars=
   
   # Combine the un-normed means with the normed results
   merge(datac, ndatac)
-  
-  suppressMessages(library(dplyr))
 }
