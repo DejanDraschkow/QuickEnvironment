@@ -38,5 +38,5 @@ summarySE <- function(data=NULL, measurevar, groupvars=NULL, na.rm=FALSE,
   datac$ci <- datac$se * ciMult
   
   return(datac)
-  library(dplyr)
+  suppressMessages(library(dplyr))
 }
