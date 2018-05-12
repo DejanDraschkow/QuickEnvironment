@@ -12,7 +12,7 @@
 ##   conf.interval: the percent range of the confidence interval (default is 95%)
 summarySEwithin <- function(data=NULL, measurevar, betweenvars=NULL, withinvars=NULL,
                             idvar=NULL, na.rm=FALSE, conf.interval=.95, .drop=TRUE) {
-  
+  detach("package:dplyr", unload=TRUE)
   # Ensure that the betweenvars and withinvars are factors
   factorvars <- vapply(data[, c(betweenvars, withinvars), drop=FALSE],
                        FUN=is.factor, FUN.VALUE=logical(1))
@@ -56,4 +56,5 @@ summarySEwithin <- function(data=NULL, measurevar, betweenvars=NULL, withinvars=
   
   # Combine the un-normed means with the normed results
   merge(datac, ndatac)
+  suppressMessages(library(dplyr))
 }
