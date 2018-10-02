@@ -24,6 +24,11 @@ InstallUsefulPackages <- function(){
     library(ggplot2)
   }
 
+  if (!require("ggpubr")) {
+    install.packages("ggpubr", dependencies = TRUE)
+    library(ggpubr)
+  }
+
   if (!require("grid")) {
     install.packages("grid", dependencies = TRUE)
     library(grid)
