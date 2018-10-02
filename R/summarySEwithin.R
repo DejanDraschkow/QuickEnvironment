@@ -13,6 +13,9 @@
 summarySEwithin <- function(data=NULL, measurevar, betweenvars=NULL, withinvars=NULL,
                             idvar=NULL, na.rm=FALSE, conf.interval=.95, .drop=TRUE) {
   
+  suppressMessages(library(dplyr))
+  suppressMessages(detach("package:dplyr", unload=TRUE))
+  
   # Ensure that the betweenvars and withinvars are factors
   factorvars <- vapply(data[, c(betweenvars, withinvars), drop=FALSE],
                        FUN=is.factor, FUN.VALUE=logical(1))
