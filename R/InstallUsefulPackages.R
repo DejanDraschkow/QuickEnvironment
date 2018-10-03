@@ -44,11 +44,6 @@ InstallUsefulPackages <- function(){
     library(reshape2)
   }
 
-  if (!require("plyr")) {
-    install.packages("plyr", dependencies = TRUE)
-    library(plyr)
-  }
-
   if (!require("dplyr")) {
     install.packages("dplyr", dependencies = TRUE)
     library(dplyr)
@@ -148,11 +143,7 @@ InstallUsefulPackages <- function(){
       try(library(installr),silent=T) # MAC incompatible
     }
   }
-  if (as.numeric(R.Version()$minor)>=4.4) {
-    if (!require("plot3D ")) {
-      install.packages("plot3D ", dependencies = TRUE)
-      library(plot3D)
-    }
+
   }
   print("If you see this message all libraries were loaded succesfully")
 }
