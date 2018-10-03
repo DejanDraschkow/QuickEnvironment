@@ -8,7 +8,6 @@
 ##   na.rm: a boolean that indicates whether to ignore NA's
 normDataWithin <- function(data=NULL, idvar, measurevar, betweenvars=NULL,
                            na.rm=FALSE, .drop=TRUE) {
-  #library(plyr)
 
   # Measure var on left, idvar + between vars on right of formula.
   data.subjMean <- plyr::ddply(data, c(idvar, betweenvars), .drop=.drop,
