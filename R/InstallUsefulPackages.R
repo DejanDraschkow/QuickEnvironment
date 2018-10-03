@@ -142,7 +142,6 @@ InstallUsefulPackages <- function(){
       suppressWarnings(install.packages("installr", dependencies = TRUE))
       try(library(installr),silent=T) # MAC incompatible
     }
-  }
 
   }
   print("If you see this message all libraries were loaded succesfully")
