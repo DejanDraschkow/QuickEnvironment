@@ -19,6 +19,12 @@ InstallUsefulPackages <- function(){
     library(png)
   }
 
+  if (!require("languageR")) {
+    install.packages("languageR", dependencies = TRUE)
+    library(languageR)
+  }
+  
+  
   if (!require("ggplot2")) {
     install.packages("ggplot2", dependencies = TRUE)
     library(ggplot2)
@@ -92,12 +98,22 @@ InstallUsefulPackages <- function(){
     install.packages("MASS", dependencies = TRUE)
     library(MASS)
   }
-
+ 
+  if (!require("pwr")) {
+    install.packages("pwr", dependencies = TRUE)
+    library(pwr)
+  }
+  
   if (!require("remef")) {
     devtools::install_github("hohenstein/remef") #github
     library(remef)
   }
-
+  
+  if (!require("mixedpower")) {
+    devtools::install_github("DejanDraschkow/mixedpower") #github
+    library(mixedpower)
+  }
+  
   if (!require("RePsychLing")) {
     devtools::install_github("dmbates/RePsychLing") #github
     library(RePsychLing)
