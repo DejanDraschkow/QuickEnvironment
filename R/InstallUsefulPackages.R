@@ -8,6 +8,11 @@ InstallUsefulPackages <- function(){
     library(devtools)
   }
 
+  if (!require("stringr")) {
+    install.packages("stringr", dependencies = TRUE)
+    library(stringr)
+  }
+  
   if (!require("EBImage")) {
     source("https://bioconductor.org/biocLite.R")
     biocLite("EBImage")
@@ -112,6 +117,11 @@ InstallUsefulPackages <- function(){
   if (!require("mixedpower")) {
     devtools::install_github("DejanDraschkow/mixedpower") #github
     library(mixedpower)
+  }
+  
+  if (!require("eyelinker")) {
+    devtools::install_github('dahtah/eyelinker') #github
+    library(eyelinker)
   }
   
   if (!require("RePsychLing")) {
