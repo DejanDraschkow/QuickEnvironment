@@ -1,6 +1,6 @@
 summarySE <- function (data = NULL, measurevar, groupvars = NULL, na.rm = TRUE, conf.interval = 0.95) {
     require(data.table)
-    data <- data.table(data)
+    data <- data.table::data.table(data)
     
     length2 <- function(x, na.rm = FALSE) {
         if (na.rm) 
