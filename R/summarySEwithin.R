@@ -1,5 +1,5 @@
 summarySE <- function (data = NULL, measurevar, groupvars = NULL, na.rm = TRUE, conf.interval = 0.95) {
-    library(data.table)
+    require(data.table)
     data <- data.table(data)
     
     length2 <- function(x, na.rm = FALSE) {
@@ -25,7 +25,7 @@ summarySE <- function (data = NULL, measurevar, groupvars = NULL, na.rm = TRUE, 
 
 normDataWithin <- function (data = NULL, idvar, measurevar, betweenvars = NULL, 
                              na.rm = TRUE) {
-    library(data.table); library(dplyr)
+    require(data.table); require(dplyr)
     data <- data.table(data)
     setkeyv(data, idvar)
     
