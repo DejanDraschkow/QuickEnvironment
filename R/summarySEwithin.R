@@ -26,7 +26,7 @@ summarySE <- function (data = NULL, measurevar, groupvars = NULL, na.rm = TRUE, 
 normDataWithin <- function (data = NULL, idvar, measurevar, betweenvars = NULL, 
                              na.rm = TRUE) {
     require(data.table); require(dplyr)
-    data <- data.table(data)
+    data <- data.table::data.table(data)
     setkeyv(data, idvar)
     
     data.subjMean <- data[, .(unlist(lapply(.SD, mean, na.rm = na.rm))), by = idvar, .SDcols = measurevar]
