@@ -8,19 +8,18 @@ Loads important libraries and sets working directory to be the path in which the
 ############ BOILERPLATE FOR SETTING UP AN ENVIRONMENT ############# 
 ########## COPY AND PASTE IN THE BEGINING OF YOUR SCRIPT ###########
 ######## CLEARS ENVIRNOMENT AND LOADS IMPORTANT LIBRARIES ##########
-############ SETS SCRIPT PATH TO BE WORKING DIRECTORY ############## 
 rm(list = ls())#####################################################
 if (!require("devtools")) {#########################################
   install.packages("devtools", dependencies = TRUE)#################
 }###################################################################
-library(devtools)###################################################
 if (!require("QuickEnvironment")) {#################################
   devtools::install_github("DejanDraschkow/QuickEnvironment")####### 
 }###################################################################
-library(QuickEnvironment)###########################################
-InstallUsefulPackages()#############################################
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))#########
+QuickEnvironment::InstallUsefulPackages()###########################
 ####################################################################
+############ SET SCRIPT PATH TO BE WORKING DIRECTORY ############### 
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))#########
+
 ```
 
 # Use cases
