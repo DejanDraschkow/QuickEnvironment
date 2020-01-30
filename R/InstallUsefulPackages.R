@@ -12,12 +12,6 @@ InstallUsefulPackages <- function(){
     install.packages("stringr", dependencies = TRUE)
     library(stringr)
   }
-  
-  if (!require("EBImage")) {
-    source("https://bioconductor.org/biocLite.R")
-    biocLite("EBImage")
-    library(EBImage)
-  }
 
   if (!require("png")) {
     install.packages("png", dependencies = TRUE)
