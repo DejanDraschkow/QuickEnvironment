@@ -151,6 +151,11 @@ InstallUsefulPackages <- function(){
     install.packages("corrplot", dependencies = TRUE)
     library(corrplot)
   }
+  
+  if (!require("TTR")) {
+    install.packages("TTR", dependencies = TRUE)
+    library(TTR)
+  }
 
   if (Sys.info()['sysname'] == "Windows"){
     if (!require("rgl")) {
