@@ -103,31 +103,6 @@ InstallUsefulPackages <- function(){
     library(pwr)
   }
   
-  if (!require("remef")) {
-    devtools::install_github("hohenstein/remef") #github
-    library(remef)
-  }
-  
-  if (!require("mixedpower")) {
-    devtools::install_github("DejanDraschkow/mixedpower") #github
-    library(mixedpower)
-  }
-  
-  if (!require("eyelinker")) {
-    devtools::install_github('dahtah/eyelinker') #github
-    library(eyelinker)
-  }
-  
-  if (!require("RePsychLing")) {
-    devtools::install_github("dmbates/RePsychLing") #github
-    library(RePsychLing)
-  }
-
-  if (!require("GLMMmisc")) {
-    devtools::install_github("pcdjohnson/GLMMmisc") #github
-    library(GLMMmisc)
-  }
-
   if (!require("scatterplot3d")) {
     install.packages("scatterplot3d", dependencies = TRUE)
     library(scatterplot3d)
@@ -167,8 +142,33 @@ InstallUsefulPackages <- function(){
       suppressWarnings(install.packages("installr", dependencies = TRUE))
       try(library(installr),silent=T) # MAC incompatible
     }
-
   }
+  
+  if (!require("remef")) {
+    devtools::install_github("hohenstein/remef") #github
+    library(remef)
+  }
+  
+  if (!require("mixedpower")) {
+    devtools::install_github("DejanDraschkow/mixedpower") #github
+    library(mixedpower)
+  }
+  
+  if (!require("eyelinker")) {
+    devtools::install_github('dahtah/eyelinker') #github
+    library(eyelinker)
+  }
+  
+  if (!require("RePsychLing")) {
+    devtools::install_github("dmbates/RePsychLing") #github
+    library(RePsychLing)
+  }
+
+  if (!require("GLMMmisc")) {
+    devtools::install_github("pcdjohnson/GLMMmisc") #github
+    library(GLMMmisc)
+  }
+
   print("If you see this message all libraries were loaded succesfully")
 }
 
