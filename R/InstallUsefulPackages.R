@@ -131,6 +131,11 @@ InstallUsefulPackages <- function(){
     install.packages("TTR", dependencies = TRUE)
     library(TTR)
   }
+  
+  if (!require("smoother")) {
+    install.packages("smoother", dependencies = TRUE)
+    library(smoother)
+  }
 
   if (Sys.info()['sysname'] == "Windows"){
     if (!require("rgl")) {
