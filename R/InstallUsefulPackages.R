@@ -159,6 +159,11 @@ InstallUsefulPackages <- function(){
     library(mixedpower)
   }
   
+  if (!require("simr")) {
+    install.packages("simr", dependencies = TRUE)
+    library(simr)
+  }
+  
   if (!require("eyelinker")) {
     devtools::install_github('dahtah/eyelinker') #github
     library(eyelinker)
