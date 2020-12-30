@@ -28,11 +28,11 @@ InstallUsefulPackages <- function(){
     install.packages("ggplot2", dependencies = TRUE)
     library(ggplot2)
   }
-  # something not working with r version > 4
- # if (!require("ggpubr")) {
-  #  install.packages("ggpubr", dependencies = TRUE)
-   # library(ggpubr)
-  #}
+  
+  if (!require("ggpubr")) {
+    install.packages("ggpubr", dependencies = TRUE)
+    library(ggpubr)
+  }
 
   if (!require("grid")) {
     install.packages("grid", dependencies = TRUE)
